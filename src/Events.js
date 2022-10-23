@@ -5,7 +5,7 @@
 export function createButton() {
     let btn = document.createElement('button');
     btn.textContent = 'Удали меня';
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (event) => {
         document.body.removeChild(btn);
     });
     document.body.appendChild(btn);
@@ -25,7 +25,7 @@ export function createArrList(arr) {
         newUl.appendChild(newLi);
     }
 
-    newUl.addEventListener('mouseover', () => {
+    newUl.addEventListener('mouseover', (event) => {
         let temp = event.target;
         temp.setAttribute('title', temp.textContent);
     });
@@ -46,7 +46,7 @@ export function createLink() {
     link.textContent = 'tensor';
     link.addEventListener(
         'click',
-        () => {
+        (event) => {
             event.preventDefault();
             event.target.textContent =
                 event.target.textContent +
@@ -78,10 +78,10 @@ export function createList() {
     let btn = document.createElement('button');
     btn.textContent = 'Добавить пункт';
     ul.appendChild(li);
-    ul.addEventListener('click', () => {
+    ul.addEventListener('click', (event) => {
         event.target.textContent = event.target.textContent + '!';
     });
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (event) => {
         let targetUl = document.body.querySelector('ul');
         li = document.createElement('li');
         li.textContent = 'Пункт';
